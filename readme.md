@@ -1,19 +1,19 @@
 -[@kyledominick](https://github.com/kyledominick/)
 
 
-cd planetAnimation/
-code .
-git checkout -b pA-240223
-git status
-git diff
-git add . 
-git commit -m "Notes"
-git push origin pA-240223
+- cd planetAnimation/
+- code .
+- git checkout -b pA-240223
+- git status
+- git diff
+- git add . 
+- git commit -m "Notes"
+- git push origin pA-240223
 
-git pull origin master
-git checkout master
-git merge pA-240223
-git push -u origin master
+- git pull origin master
+- git checkout master
+- git merge pA-240223
+- git push -u origin master
 
 Overview
 This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for basic syntax and extended syntax.
