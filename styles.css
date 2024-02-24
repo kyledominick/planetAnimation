@@ -1,119 +1,371 @@
 html, body { height: 100%; }
 
-.parent {
+.container {
   background: gray;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@keyframes ball {
-    0%   {background-color: orange;}
-    50%  {background-color: rgb(218, 218, 218);}
-    100% {background-color: orange;}
-  }
-  
-
-.child {
-  background-color: orange;
-  width: 100px;
-  height: 100px;
-  border-radius:50%;
-  animation-name: ball;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes bgBack {
-    0%   {background-color: #f5f5f5;}
-    50%  {background-color: rgb(218, 218, 218);}
-    100% {background-color: #f5f5f5;}
-  }
-  
-  body {
+body {
     width: 100vw;
     height: 100vh;
-    animation-name: bgBack;
+    animation-name: bodyAni;
     animation-duration: 4s;
     animation-iteration-count: infinite;
     font-family: 'Montserrat', sans-serif;
     margin: auto;
   }
 
-  @keyframes pBg {
-    0%   {background-color: rgb(218, 218, 218);}
-    50%  {background-color: #f5f5f5;}
-    100% {background-color:  rgb(218, 218, 218);}
+  @keyframes bodyAni {
+    0%   {background-color: #f5f5f5;}
+    50%  {background-color: rgb(218, 218, 218);}
+    100% {background-color: #f5f5f5;}
   }
-  
+
   .primary{
-    width:50vw;
-    height:50vh;
-    animation-name: pBg;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width: 90vw;
+    height:90vh;
+    animation-name: primaryAni;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    margin: auto;
-    border-radius:50px;
+    border-radius:10px;
+    overflow:hidden;
 }
 
-@keyframes pBg2 {
-    0%   {background-color: green}
-    50%  {background-color: red}
-    100% {background-color: green;}
-  }
-  
-  .tertiary{
-    width:25px;
-    height:25px;
-    animation-name: pBg2;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    margin: auto;
-    border-radius:50px;
+@keyframes primaryAni {
+  0%   {background-color: rgb(39, 39, 39);}
+  50%  {background-color: #363636;}
+  100% {background-color: rgb(39, 39, 39);}
 }
 
-.quaternary{
-  width:5px;
-  height:5px;
-  animation-name: pBg3;
+.sun {
+  background-color:orange;
+  width: 1px;
+  height: 1px;
+  border-radius:50%;
+  animation-name: sunAni;
   animation-duration: 4s;
   animation-iteration-count: infinite;
-  margin: auto;
-  border-radius:50px;
 }
 
-@keyframes pBg3 {
-  0%   {background-color: red;}
-  50%  {background-color: green;}
-  100% {background-color: red;}
+@keyframes sunAni {
+  0%   {background-color: orange;}
+  50%  {background-color: rgb(255, 239, 99);}
+  100% {background-color: orange;}
 }
 
-#spin {
-  animation: orbit 4s forwards infinite;
+.mercury{
+    position:absolute;
+    top:calc(50% - 1px);
+    left:calc(50% - 1px);
+    width:1px;
+    height:1px;
+    animation-name: mercAni;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    border-radius:50%;
+}
+
+@keyframes mercAni {
+  0%   {background-color: rgb(214, 214, 214);}
+  50%  {background-color: rgb(112, 112, 112);}
+  100% {background-color: rgb(214, 214, 214);}
+}
+
+#mercSpin {
+  animation: mercuryOrbit .5s forwards infinite;
   animation-timing-function: linear;
 }
 
-#moonSpin {
-  animation: orbit2 4s forwards infinite;
+@-webkit-keyframes mercuryOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(3px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(3px) rotate(360deg); }
+}
+
+.venus{
+  position:absolute;
+  top:calc(50% - 1px);
+  left:calc(50% - 1px);
+  width:1px;
+  height:1px;
+  animation-name: venusAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  border-radius:50%;
+}
+
+@keyframes venusAni {
+0%   {background-color: rgb(214, 214, 214);}
+50%  {background-color: rgb(112, 112, 112);}
+100% {background-color: rgb(214, 214, 214);}
+}
+
+#venusSpin {
+  animation: venusOrbit 1.5s forwards infinite;
   animation-timing-function: linear;
 }
 
-#spin2 {
-  animation: orbit3 4s forwards infinite;
+@-webkit-keyframes venusOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(5px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(5px) rotate(360deg); }
+}
+
+.earth{
+  position:absolute;
+  top:calc(50% - 1px);
+  left:calc(50% - 1px);
+  width:1px;
+  height:1px;
+  animation-name: earthAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  border-radius:50%;
+}
+
+@keyframes earthAni { 
+  0%   {background-color: rgb(27, 131, 172);}
+  50%  {background-color: rgb(151, 189, 245);}
+  100% {background-color: rgb(27, 131, 172);}
+} 
+
+#earthSpin {
+  animation: earthOrbit 2.5s forwards infinite;
   animation-timing-function: linear;
 }
 
-@-webkit-keyframes orbit {
-    from {  -webkit-transform: rotate(0deg) translateX(100px) rotate(0deg); }
-    to   {  -webkit-transform: rotate(360deg) translateX(100px) rotate(-360deg);}
+@-webkit-keyframes earthOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(7px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(7px) rotate(360deg); }
+} 
+
+.mars{
+  position:absolute;
+  top:calc(50% - 1px);
+  left:calc(50% - 1px);
+  width:1px;
+  height:1px;
+  animation-name: marsAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  border-radius:50%;
 }
 
-    @-webkit-keyframes orbit2 {
-      from {  -webkit-transform: rotate(0deg) translateX(50px) rotate(0deg); }
-      to   {  -webkit-transform: rotate(360deg) translateX(50px) rotate(-360deg); }
-    }
+@keyframes marsAni {
+  0%   {background-color: rgb(158, 30, 30);}
+  50%  {background-color: rgb(255, 0, 0);}
+  100% {background-color: rgb(158, 30, 30);}
+} 
 
-    @-webkit-keyframes orbit3 {
-      from {  -webkit-transform: rotate(0deg) translateX(10px) rotate(0deg); }
-      to   {  -webkit-transform: rotate(360deg) translateX(10px) rotate(360deg); }
-    }
+#marsSpin {
+  animation: marsOrbit 5s forwards infinite;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes marsOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(11px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(11px) rotate(360deg); }
+} 
+
+.jupiter{
+  position:absolute;
+  top:calc(50% - 1px);
+  left:calc(50% - 1px);
+  width:1px;
+  height:1px;
+  animation-name: jupiterAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  border-radius:50%;
+}
+
+@keyframes jupiterAni {
+  0%   {background-color: rgb(235, 235, 235);}
+  50%  {background-color: rgb(190, 126, 41);}
+  100% {background-color: rgb(235, 235, 235);}
+}
+
+#jupiterSpin {
+  animation: jupiterOrbit 30s forwards infinite;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes jupiterOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(32px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(32px) rotate(360deg); }
+} 
+
+.saturn{
+  position:absolute;
+  top:calc(50% - 1px);
+  left:calc(50% - 1px);
+  width:1px;
+  height:1px;
+  animation-name: saturnAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  border-radius:50%;
+} 
+
+@keyframes saturnAni {
+  0%   {background-color: rgb(158, 30, 30);}
+  50%  {background-color: rgb(255, 0, 0);}
+  100% {background-color: rgb(158, 30, 30);}
+} 
+
+#saturnSpin {
+  animation: saturnOrbit 72s forwards infinite;
+  animation-timing-function: linear;
+} 
+
+@-webkit-keyframes saturnOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(60px) rotate(360deg); }
+} 
+
+.uranus{
+  position:absolute;
+  top:calc(50% - 1px);
+  left:calc(50% - 1px);
+  width:1px;
+  height:1px;
+  animation-name: uranusAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  border-radius:50%;
+} 
+
+@keyframes uranusAni {
+  0%   {background-color: rgb(32, 139, 189);}
+  50%  {background-color: rgb(57, 192, 129);}
+  100% {background-color: rgb(32, 139, 189);}
+} 
+
+#uranusSpin {
+  animation: uranusOrbit 210s forwards infinite;
+  animation-timing-function: linear;
+} 
+
+@-webkit-keyframes uranusOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(125px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(125px) rotate(360deg); }
+}
+
+.neptune{
+  position:absolute;
+  top:calc(50% - 1px);
+  left:calc(50% - 1px);
+  width:1px;
+  height:1px;
+  animation-name: neptuneAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  border-radius:50%;
+} 
+
+@keyframes neptuneAni {
+  0%   {background-color: rgb(19, 214, 198);}
+  50%  {background-color: rgb(18, 158, 135);}
+  100% {background-color: rgb(19, 214, 198);}
+} 
+
+#neptuneSpin {
+  animation: neptuneOrbit 412s forwards infinite;
+  animation-timing-function: linear;
+} 
+
+@-webkit-keyframes neptuneOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(195px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(195px) rotate(360deg); }
+} 
+
+.pluto{
+  position:absolute;
+  top:calc(50% - 1px);
+  left:calc(50% - 1px);
+  width:1px;
+  height:1px;
+  animation-name: plutoAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  border-radius:50%;
+} 
+
+@keyframes plutoAni {
+  0%   {background-color: rgb(198, 145, 233);}
+  50%  {background-color: rgb(128, 45, 114);}
+  100% {background-color: rgb(198, 145, 233);}
+} 
+
+#plutoSpin {
+  animation: plutoOrbit 600s forwards infinite;
+  animation-timing-function: linear;
+} 
+
+@-webkit-keyframes plutoOrbit {
+  from {  -webkit-transform: rotate(0deg) translateX(250px) rotate(0deg); }
+  to   {  -webkit-transform: rotate(360deg) translateX(250px) rotate(360deg); }
+}
+
+
+
+.mercuryOutline{
+  z-index:10;
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:6px;
+  height:6px;
+  border:.25px solid rgb(214, 214, 214);
+  border-radius:50%;
+  animation-name: mercOutlineAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mercOutlineAni {
+  0%   {border-color: rgb(214, 214, 214);}
+  50%  {border-color: rgb(112, 112, 112);}
+  100% {border-color: rgb(214, 214, 214);}
+}
+
+.venusOutline{
+  position:absolute;
+  top:calc(50% - 5px);
+  left:calc(50% - 5px);
+  width:10px;
+  height:10px;
+  border:1px solid rgb(214, 214, 214);
+  border-radius:50%;
+  animation-name: venusOutlineAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes venusOutlineAni {
+  0%   {border-color: rgb(214, 214, 214);}
+  50%  {border-color: rgb(112, 112, 112);}
+  100% {border-color: rgb(214, 214, 214);}
+}
+
+.earthOutline{
+  position:absolute;
+  top:calc(50% - 7px);
+  left:calc(50% - 7px);
+  width:14px;
+  height:14px;
+  border:1px solid rgb(27, 131, 172);
+  border-radius:50%;
+  animation-name: earthOutlineAni;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes earthOutlineAni {
+  0%   {border-color: rgb(27, 131, 172);}
+  50%  {border-color: rgb(151, 189, 245);}
+  100% {border-color: rgb(27, 131, 172);}
+}
